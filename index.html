@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>مشاركة ثامر بن دعجم في مؤتمر التراث الرقمي – تجربة واقع معزز</title>
+
+  <!-- model-viewer -->
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+
+  <style>
+    :root {
+      --bg-dark: #3b2a23;
+      --bg-darker: #22140f;
+      --bg-accent: #6b3a1e;
+      --fg: #fdf5e6;
+      --accent: #c28a52;
+      --accent-strong: #eab676;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Noto Kufi Arabic", system-ui, sans-serif;
+      color: var(--fg);
+      background:
+        radial-gradient(circle at top, #8b5a2b 0, #5a3a24 35%, #2b1810 70%, #150b07 100%);
+      display: flex;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 900px;
+      background: linear-gradient(145deg, rgba(39, 24, 17, 0.96), rgba(24, 14, 10, 0.98));
+      border-radius: 24px;
+      border: 1px solid rgba(250, 240, 230, 0.18);
+      box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.85),
+        0 0 0 1px rgba(139, 92, 60, 0.4);
+      padding: 18px 16px 20px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      text-align: center;
+    }
+
+    header .logo {
+      flex: 0 0 auto;
+    }
+
+    header .logo img {
+      max-height: 70px;
+      width: auto;
+      border-radius: 12px;
+      background: #fff;
+      padding: 4px 6px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+    }
+
+    .header-text {
+      flex: 1 1 220px;
+    }
+
+    .tagline {
+      font-size: 0.78rem;
+      opacity: 0.9;
+      color: #fce9c7;
+      margin-bottom: 4px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 1.25rem;
+      color: #ffe7ba;
+    }
+
+    .subtitle {
+      margin-top: 4px;
+      font-size: 0.9rem;
+      opacity: 0.9;
+      color: #f7e1c0;
+    }
+
+    .viewer-wrap {
+      margin-top: 14px;
+      border-radius: 20px;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(209, 140, 73, 0.9), rgba(120, 63, 22, 0.9));
+    }
+
+    .viewer-inner {
+      border-radius: 19px;
+      background: radial-gradient(circle at top, #3b2518 0, #1b120e 50%, #0b0604 100%);
+      padding: 8px;
+    }
+
+    model-viewer {
+      width: 100%;
+      height: 70vh;
+      max-height: 600px;
+      border-radius: 16px;
+      background-color: #120806;
+      --poster-color: transparent;
+      --progress-bar-color: #facc15;
+    }
+
+    .ar-button {
+      font-family: "Noto Kufi Arabic", system-ui, sans-serif;
+      padding: 10px 20px;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(135deg, #b97a3c, #e0a96b);
+      color: #3b1f0f;
+      font-size: 0.9rem;
+      cursor: pointer;
+      margin-top: 10px;
+      box-shadow:
+        0 8px 20px rgba(0,0,0,0.6),
+        0 0 0 1px rgba(255, 248, 220, 0.7);
+    }
+
+    .ar-button:active { transform: scale(0.97); }
+
+    #ar-instructions {
+      position: absolute;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.8);
+      color: #fff7df;
+      font-size: 0.8rem;
+      display: none;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    model-viewer[ar-status="session-started"] #ar-instructions {
+      display: block;
+    }
+
+    .hint {
+      margin-top: 10px;
+      font-size: 0.83rem;
+      color: #f8e0ba;
+      text-align: center;
+      opacity: 0.95;
+    }
+
+    .hint span {
+      color: #ffd27f;
+      font-weight: 600;
+    }
+
+    @media (max-width: 640px) {
+      .page { padding: 14px 10px 16px; }
+      header { flex-direction: column; }
+      header .logo img { max-height: 60px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <header>
+      <div class="logo">
+        <!--
+          مهم:
+          حمّل شعار هيئة التراث الرسمي وضعه في نفس مجلد index.html
+          باسم: heritage-logo.png
+          أو غيّر src أدناه إلى اسم الملف الذي ترفعه في GitHub.
+        -->
+        <img src="heritage-logo.png" alt="شعار هيئة التراث">
+      </div>
+      <div class="header-text">
+        <div class="tagline">تجربة واقع معزز ضمن فعاليات</div>
+        <h1>مشاركة ثامر بن دعجم في مؤتمر التراث الرقمي</h1>
+        <div class="subtitle">عرض فانوس تراثي ثلاثي الأبعاد يمكن استكشافه داخل بيئة الزائر باستخدام كاميرا الجوال.</div>
+      </div>
+    </header>
+
+    <section class="viewer-wrap">
+      <div class="viewer-inner">
+        <model-viewer
+          src="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Lantern/glTF-Binary/Lantern.glb"
+          alt="فانوس تراثي ثلاثي الأبعاد"
+          ar
+          ar-modes="webxr scene-viewer quick-look"
+          ar-scale="fixed"
+          scale="0.08 0.08 0.08"
+          ar-placement="floor"
+          camera-controls
+          auto-rotate
+          shadow-intensity="1"
+          environment-image="neutral"
+          xr-environment>
+
+          <button slot="ar-button" class="ar-button">
+            عرض في الواقع المعزز
+          </button>
+
+          <div id="ar-instructions">
+            وجّه كاميرا الهاتف نحو الأرض ثم المس الشاشة لوضع الفانوس التراثي.
+          </div>
+        </model-viewer>
+      </div>
+    </section>
+
+    <p class="hint">
+      للتفاعل مع الفانوس: استخدم <span>سحب الإصبع</span> للدوران حوله، و<span>التقريب بإصبعين</span> لتكبير أو تصغير الحجم داخل المشهد.
+    </p>
+  </div>
+</body>
+</html>
