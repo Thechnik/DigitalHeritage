@@ -190,30 +190,31 @@
       </div>
     </header>
 
-    <section class="viewer-wrap">
-      <div class="viewer-inner">
-        <model-viewer
-          src="https://raw.githubusercontent.com/Thechnik/DigitalHeritage/main/ancient_pottery_vase.glb"
-          alt="مزهرية فخّارية تراثية"
-          ar
-          ar-modes="webxr scene-viewer quick-look"
-          camera-controls
-          auto-rotate
-          shadow-intensity="1"
-          environment-image="neutral"
-          xr-environment>
-        </model-viewer>
-        
-          <button slot="ar-button" class="ar-button">
-            عرض في الواقع المعزز
-          </button>
+  <section class="viewer-wrap">
+    <div class="viewer-inner">
+      <model-viewer
+        src="https://raw.githubusercontent.com/Thechnik/DigitalHeritage/main/ancient_pottery_vase.glb"
+        alt="مزهرية فخّارية تراثية"
+        ar
+        ar-modes="webxr scene-viewer quick-look"
+        camera-controls
+        auto-rotate
+        shadow-intensity="1"
+        environment-image="neutral"
+        xr-environment>
+  
+        <button slot="ar-button" class="ar-button">
+          عرض في الواقع المعزز
+        </button>
+  
+        <div id="ar-instructions">
+          وجّه كاميرا الجوال نحو الأرض ثم المس الشاشة لوضع المزهرية الفخّارية التراثية.
+        </div>
+  
+      </model-viewer>
+    </div>
+  </section>
 
-          <div id="ar-instructions">
-            وجّه كاميرا الجوال نحو الأرض ثم المس الشاشة لوضع المزهرية الفخّارية التراثية.
-          </div>
-        </model-viewer>
-      </div>
-    </section>
 
 <p class="hint">
   للتفاعل مع المزهرية الفخّارية التراثية: استخدم <span>سحب الإصبع</span> للدوران حولها، و<span>التقريب بإصبعين</span> لتكبير أو تصغير الحجم داخل المشهد.
