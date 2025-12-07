@@ -175,14 +175,9 @@
   <div class="page">
     <header>
       <div class="logo">
-        <!--
-          مهم:
-          حمّل شعار هيئة التراث الرسمي وضعه في نفس مجلد index.html
-          باسم: heritage-logo.png
-          أو غيّر src أدناه إلى اسم الملف الذي ترفعه في GitHub.
-        -->
         <img src="heritage-logo.png" alt="شعار هيئة التراث">
       </div>
+
       <div class="header-text">
 
         <!-- اختيار اللغة -->
@@ -215,6 +210,7 @@
 
     <section class="viewer-wrap">
       <div class="viewer-inner">
+
         <model-viewer
           src="https://raw.githubusercontent.com/Thechnik/DigitalHeritage/main/ancient_pottery_vase_edited.glb"
           alt="مزهرية فخّارية تراثية"
@@ -225,12 +221,16 @@
           shadow-intensity="1"
           environment-image="neutral"
           xr-environment>
-          <button slot="ar-button" class="ar-button">
+
+          <!-- زر AR مع ID جديد -->
+          <button id="ar-button-text" slot="ar-button" class="ar-button">
             عرض في الواقع المعزز
           </button>
+
           <div id="ar-instructions">
             وجّه كاميرا الجوال نحو الأرض ثم المس الشاشة لوضع المزهرية الفخّارية التراثية.
           </div>
+
         </model-viewer>
       </div>
     </section>
@@ -249,7 +249,8 @@
         subtitle: "عرض مزهرية فخّارية تراثية ثلاثية الأبعاد يمكن استكشافها باستخدام كاميرا الجوال.",
         interaction:
           "للتفاعل مع المزهرية الفخّارية التراثية: استخدم <span>سحب الإصبع</span> للدوران حولها، و<span>التقريب بإصبعين</span> لتكبير أو تصغير الحجم داخل المشهد.",
-        arInstructions: "وجّه كاميرا الجوال نحو الأرض ثم المس الشاشة لوضع المزهرية الفخّارية التراثية."
+        arInstructions: "وجّه كاميرا الجوال نحو الأرض ثم المس الشاشة لوضع المزهرية الفخّارية التراثية.",
+        arButton: "عرض في الواقع المعزز"
       },
 
       en: {
@@ -258,16 +259,18 @@
         subtitle: "Explore a traditional pottery vase in augmented reality using your phone’s camera.",
         interaction:
           "To interact with the pottery vase: use <span>one-finger drag</span> to rotate, and <span>two-finger pinch</span> to zoom in or out.",
-        arInstructions: "Point your phone's camera at the ground, then tap to place the traditional pottery vase."
+        arInstructions: "Point your phone's camera at the ground, then tap to place the traditional pottery vase.",
+        arButton: "View in AR"
       },
 
       zh: {
         tagline: "AR体验 – 传统陶瓷花瓶",
-        title: "萨默·本·达贾姆在数字遗产大会的展示",
+        title: "萨默·本·达ج姆在数字遗产大会的展示",
         subtitle: "使用手机摄像头，在增强现实中体验和探索传统陶瓷花瓶。",
         interaction:
           "与陶瓷花瓶互动：使用<span>单指拖动</span>旋转，使用<span>双指捏合</span>进行放大或缩小。",
-        arInstructions: "将手机摄像头对准地面，然后点击屏幕以放置传统陶瓷花瓶。"
+        arInstructions: "将手机摄像头对准地面，然后点击屏幕以放置传统陶瓷花瓶。",
+        arButton: "在AR中查看"
       }
     };
 
@@ -281,6 +284,9 @@
       document.getElementById("subtitle").innerHTML = translations[lang].subtitle;
       document.getElementById("interaction-text").innerHTML = translations[lang].interaction;
       document.getElementById("ar-instructions").innerHTML = translations[lang].arInstructions;
+
+      // زر AR
+      document.getElementById("ar-button-text").innerHTML = translations[lang].arButton;
 
       if (lang === "ar") {
         document.documentElement.dir = "rtl";
