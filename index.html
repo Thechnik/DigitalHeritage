@@ -184,38 +184,112 @@
         <img src="heritage-logo.png" alt="شعار هيئة التراث">
       </div>
       <div class="header-text">
-        <div class="tagline">تجربة واقع معزز - المزهرية الفخّارية التراثية</div>
-        <h1>مشاركة ثامر بن دعجم في مؤتمر التراث الرقمي</h1>
-        <div class="subtitle">عرض مزهرية فخّارية تراثية ثلاثية الأبعاد يمكن استكشافها باستخدام كاميرا الجوال.</div>
-        <p>  للتفاعل مع المزهرية الفخّارية التراثية: استخدم <span>سحب الإصبع</span> للدوران حولها، و<span>التقريب بإصبعين</span> لتكبير أو تصغير الحجم داخل المشهد.</p>
+
+        <!-- اختيار اللغة -->
+        <div style="text-align:center; margin-bottom:8px;">
+          <select id="langSwitch" style="
+            padding:6px 10px;
+            border-radius:8px;
+            background:#e0a96b;
+            color:#3b1f0f;
+            border:none;
+            font-size:0.85rem;
+            cursor:pointer;">
+            <option value="ar">العربية</option>
+            <option value="en">English</option>
+            <option value="zh">中文</option>
+          </select>
+        </div>
+
+        <div class="tagline" id="tagline">تجربة واقع معزز - المزهرية الفخّارية التراثية</div>
+        <h1 id="title">مشاركة ثامر بن دعجم في مؤتمر التراث الرقمي</h1>
+        <div class="subtitle" id="subtitle">
+          عرض مزهرية فخّارية تراثية ثلاثية الأبعاد يمكن استكشافها باستخدام كاميرا الجوال.
+        </div>
+        <p id="interaction-text">
+          للتفاعل مع المزهرية الفخّارية التراثية: استخدم <span>سحب الإصبع</span> للدوران حولها،
+          و<span>التقريب بإصبعين</span> لتكبير أو تصغير الحجم داخل المشهد.
+        </p>
       </div>
     </header>
 
-<section class="viewer-wrap">
-  <div class="viewer-inner">
-    <model-viewer
-      src="https://raw.githubusercontent.com/Thechnik/DigitalHeritage/main/ancient_pottery_vase_edited.glb"
-      alt="مزهرية فخّارية تراثية"
-      ar
-      ar-modes="webxr scene-viewer quick-look"
-      camera-controls
-      auto-rotate
-      shadow-intensity="1"
-      environment-image="neutral"
-      xr-environment>
-      <button slot="ar-button" class="ar-button">
-        عرض في الواقع المعزز
-      </button>
-      <div id="ar-instructions">
-        وجّه كاميرا الجوال نحو الأرض ثم المس الشاشة لوضع المزهرية الفخّارية التراثية.
+    <section class="viewer-wrap">
+      <div class="viewer-inner">
+        <model-viewer
+          src="https://raw.githubusercontent.com/Thechnik/DigitalHeritage/main/ancient_pottery_vase_edited.glb"
+          alt="مزهرية فخّارية تراثية"
+          ar
+          ar-modes="webxr scene-viewer quick-look"
+          camera-controls
+          auto-rotate
+          shadow-intensity="1"
+          environment-image="neutral"
+          xr-environment>
+          <button slot="ar-button" class="ar-button">
+            عرض في الواقع المعزز
+          </button>
+          <div id="ar-instructions">
+            وجّه كاميرا الجوال نحو الأرض ثم المس الشاشة لوضع المزهرية الفخّارية التراثية.
+          </div>
+        </model-viewer>
       </div>
-    </model-viewer>
-    </div>
-  </section>
+    </section>
 
-  <span style="font-size: 0.72rem; opacity: 0.75; direction: ltr; display: inline-block; margin-top: 6px;">
-    Ancient Pottery Vase 3D Model © designed by: beeclark - Raleigh, NC
-  </span>
+    <span style="font-size: 0.72rem; opacity: 0.75; direction: ltr; display: inline-block; margin-top: 6px;">
+      Ancient Pottery Vase 3D Model © designed by: beeclark - Raleigh, NC
+    </span>
   </div>
+
+  <!-- سكربت تغيير اللغة -->
+  <script>
+    const translations = {
+      ar: {
+        tagline: "تجربة واقع معزز - المزهرية الفخّارية التراثية",
+        title: "مشاركة ثامر بن دعجم في مؤتمر التراث الرقمي",
+        subtitle: "عرض مزهرية فخّارية تراثية ثلاثية الأبعاد يمكن استكشافها باستخدام كاميرا الجوال.",
+        interaction:
+          "للتفاعل مع المزهرية الفخّارية التراثية: استخدم <span>سحب الإصبع</span> للدوران حولها، و<span>التقريب بإصبعين</span> لتكبير أو تصغير الحجم داخل المشهد.",
+        arInstructions: "وجّه كاميرا الجوال نحو الأرض ثم المس الشاشة لوضع المزهرية الفخّارية التراثية."
+      },
+
+      en: {
+        tagline: "AR Experience – Traditional Pottery Vase",
+        title: "Thamer Bin Dajam’s Participation in the Digital Heritage Conference",
+        subtitle: "Explore a traditional pottery vase in augmented reality using your phone’s camera.",
+        interaction:
+          "To interact with the pottery vase: use <span>one-finger drag</span> to rotate, and <span>two-finger pinch</span> to zoom in or out.",
+        arInstructions: "Point your phone's camera at the ground, then tap to place the traditional pottery vase."
+      },
+
+      zh: {
+        tagline: "AR体验 – 传统陶瓷花瓶",
+        title: "萨默·本·达贾姆在数字遗产大会的展示",
+        subtitle: "使用手机摄像头，在增强现实中体验和探索传统陶瓷花瓶。",
+        interaction:
+          "与陶瓷花瓶互动：使用<span>单指拖动</span>旋转，使用<span>双指捏合</span>进行放大或缩小。",
+        arInstructions: "将手机摄像头对准地面，然后点击屏幕以放置传统陶瓷花瓶。"
+      }
+    };
+
+    const langSwitch = document.getElementById("langSwitch");
+
+    langSwitch.addEventListener("change", () => {
+      const lang = langSwitch.value;
+
+      document.getElementById("tagline").innerHTML = translations[lang].tagline;
+      document.getElementById("title").innerHTML = translations[lang].title;
+      document.getElementById("subtitle").innerHTML = translations[lang].subtitle;
+      document.getElementById("interaction-text").innerHTML = translations[lang].interaction;
+      document.getElementById("ar-instructions").innerHTML = translations[lang].arInstructions;
+
+      if (lang === "ar") {
+        document.documentElement.dir = "rtl";
+        document.documentElement.lang = "ar";
+      } else {
+        document.documentElement.dir = "ltr";
+        document.documentElement.lang = lang;
+      }
+    });
+  </script>
 </body>
 </html>
